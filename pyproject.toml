@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-data-pipeline-investigator"
+version = "0.1.0"
+description = "Synthetic incident scenarios for an AI data pipeline investigator."
+requires-python = ">=3.11"
+dependencies = ["duckdb>=1.0",
+"langchain",
+"langgraph",
+"langchain-openai",
+"python-dotenv",
+"pydantic"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
